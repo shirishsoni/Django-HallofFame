@@ -24,6 +24,7 @@ def home(request):
 def dashboard(request):
     halls = Hall.objects.filter(user = request.user)
     return render(request, "halls/dashboard.html", {'halls':halls})
+
 @login_required
 def add_video(request, pk):
     form = VideoForm()
